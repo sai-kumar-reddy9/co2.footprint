@@ -11,7 +11,7 @@ const LandingPage = () => {
         <p>
           Our website helps you calculate and reduce your carbon footprint when
           traveling. Learn more about sustainable travel and how you can make a
-          difference.
+          difference by Login / Signup.
         </p>
       </section>
     </div>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginForm from './components/login';
-import RegisterForm from './components/register';
-import LandingPage from './components/landingPage';
-import ProtectedRoute from './components/ProtectedRoute';
-import Home from './pages/home';
-import Dashboard from './pages/dashboard';
-import CO2EstimationPage from './pages/co2EstiPage';
-import CO2CalculationPage from './pages/co2CalPage';
+import LoginForm from './components/login.jsx';
+import RegisterForm from './components/register.jsx';
+import LandingPage from './components/landingPage.jsx';
+import ProtectedRoute from './components/ProtectedRoute.jsx';
+import Home from './pages/home.jsx';
+import Dashboard from './pages/dashboard.jsx';
+import CO2EstimationPage from './pages/co2EstiPage.jsx';
+import CO2CalculationPage from './pages/co2CalPage.jsx';
 
 const App = () => {
   return (

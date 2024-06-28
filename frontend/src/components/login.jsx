@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./App.css";
 
 const LoginForm = () => {
@@ -25,6 +25,7 @@ const LoginForm = () => {
 
       const data = await res.json();
       if (res.ok) {
+        console.log('Token received:', data.token); // Debug statement
         localStorage.setItem('token', data.token);
         navigate('/home');
       } else {
@@ -67,7 +68,7 @@ const LoginForm = () => {
           {loading ? 'Logging in...' : 'Login'}
         </button>
         <div className="register-link">
-          <p>Don't have an account? <a href="/register">Register here</a></p>
+          <p>Don't have an account? <Link to="/register">Register here</Link></p>
         </div>
       </form>
     </div>
