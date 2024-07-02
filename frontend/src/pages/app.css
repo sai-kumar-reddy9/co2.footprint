@@ -1,80 +1,206 @@
+/* Global styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .home-container {
-    text-align: center;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #282c34;
-    color: white;
-  }
-  
-  .logo {
-    font-size: 1.5em;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-  }
-  
-  .navbar-links a:hover {
-    text-decoration: underline;
-  }
-  
-  .hero-section {
-    padding: 50px;
-    background: #f4f4f4;
-  }
-  
-  .hero-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .hero-section p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
-  
-  .features-section {
-    padding: 50px;
-  }
-  
-  .features-section h2 {
-    font-size: 2em;
-    margin-bottom: 30px;
-  }
-  
-  .features {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .feature {
-    width: 30%;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .footer {
-    padding: 20px;
-    background-color: #282c34;
-    color: white;
-  }
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
 
-  /* src/components/CO2EstimationPage.css */
-/* src/pages/CO2EstimationPage.css */
+.home-container {
+  text-align: center;
+}
+
+.wrapper {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 80%;
+  margin: auto;
+  margin: top 80px;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 35px;
+}
+
+.input-box i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.submit {
+  width: 100%;
+  padding: 10px;
+  background-color: hsl(110, 78%, 47%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit:hover {
+  background-color: #24b300;
+}
+
+.register-link {
+  text-align: center;
+}
+
+.register-link a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.register-fields {
+  display: none;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.register-fields h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-fields .input-box {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.register-fields .input-box input {
+  width: calc(100% - 35px);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding-left: 35px;
+}
+
+.register-fields .input-box i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.register-fields button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-fields button:hover {
+  background-color: #218838;
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 98%;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+
+/* Landing Page Styles */
+
+.landing-page .hero-section {
+  padding: 50px;
+  background: #f4f4f4;
+}
+
+.landing-page .hero-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.landing-page .hero-section p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.landing-page .features-section {
+  padding: 30px;
+}
+
+.landing-page .features-section h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.landing-page .features {
+  display: flex;
+  justify-content: space-around;
+}
+
+.landing-page .feature {
+  width: 30%;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.landing-page .footer {
+  padding: 20px;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+}
+
+/* CO2 Estimation Page Styles */
 .co2-estimation-page {
   text-align: center;
   padding: 20px;
@@ -111,18 +237,18 @@ body, html {
 .emissions-result {
   margin-top: 20px;
   padding: 20px;
-  border: 1px solid #00c853; /* Aesthetic border color */
+  border: 1px solid #00c853;
   border-radius: 10px;
   display: inline-block;
   text-align: left;
-  background: #e0f7fa; /* Light cyan background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background: #e0f7fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .emission-details div {
   margin: 5px 0;
   font-size: 18px;
-  color: #004d40; /* Dark cyan text color */
+  color: #004d40;
 }
 
 .error {
@@ -130,5 +256,18 @@ body, html {
   margin-top: 20px;
 }
 
+/* Additional styles  */
+/* logout styles */
+.logout-button {
+  font-size: 0.8em;
+  font-family: 'Oswald', sans-serif;
+  position: relative;
+  letter-spacing: 3px;
+  transition: opacity 0.45s;
+  opacity: 1; 
+  margin-left: 300px; 
+  background-color: #00c853c0;
+  cursor: pointer;
+}
 
-  
+

@@ -1,20 +1,13 @@
+// src/pages/LandingPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './app.css';
 
-const Home = () => {
+const LandingPage = () => {
   return (
-    <div className="home-container">
-      <nav className="navbar">
-        <h1 className="logo">CO2 Footprint Travel Planner</h1>
-        <div className="navbar-links">
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/co2EstiPage">CO2 Estimation</Link>
-          <Link to="/co2Calpage">CO2 Calculation</Link>
-        </div>
-      </nav>
+    <div className="landing-page">
       <header className="hero-section">
-        <h2>Welcome to Your CO2 Footprint Dashboard</h2>
+        <h2>Welcome to Your CO2 Footprint</h2>
         <p>Track and reduce your carbon footprint with our tools and insights.</p>
       </header>
       <section className="features-section">
@@ -41,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;

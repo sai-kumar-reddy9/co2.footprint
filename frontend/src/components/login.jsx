@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import "./App.css";
+import "../pages/app.css";
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -27,7 +27,7 @@ const LoginForm = () => {
       if (res.ok) {
         console.log('Token received:', data.token); // Debug statement
         localStorage.setItem('token', data.token);
-        navigate('/home');
+        navigate('/');
       } else {
         setError(data.message || 'Login failed');
       }

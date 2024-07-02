@@ -1,29 +1,25 @@
+// src/App.jsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginForm from './components/login.jsx';
+import { Routes, Route } from 'react-router-dom';
+import LoginForm from './components/login.jsx'
 import RegisterForm from './components/register.jsx';
-import LandingPage from './components/landingPage.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
-import Home from './pages/home.jsx';
+import LandingPage from './pages/LandingPage.jsx';
 import Dashboard from './pages/dashboard.jsx';
 import CO2EstimationPage from './pages/co2EstiPage.jsx';
 import CO2CalculationPage from './pages/co2CalPage.jsx';
-
+import Navbar from './components/navbar.jsx';
+import About from './pages/about.jsx';
+import LogoutButton from './components/logout.jsx';
 const App = () => {
   return (
-    <Router>
+    <div>
+      <Navbar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/about" element={<About />} />
         <Route
           path="/dashboard"
           element={
@@ -48,8 +44,16 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+         <Route
+          path="/logout"
+          element={
+            <ProtectedRoute>
+              <LogoutButton />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
-    </Router>
+    </div>
   );
 };
 

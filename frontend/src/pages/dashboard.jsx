@@ -1,4 +1,4 @@
-// src/pages/co2EstiPage.jsx
+// src/pages/dashboard.jsx
 import React from 'react';
 
 const Dashboard = () => {
