@@ -1,7 +1,7 @@
-// src/carbonApi.jsx
+// src/pages/carbonApi.jsx
 import axios from 'axios';
 
-const API_KEY = 'qeWdMY3hKWiBIOszfZmmw';
+const API_KEY = 'qeWdMY3hKWiBIOszfZmmw'; //Carbon Interface API key
 
 // Function to fetch vehicle makes
 export const getVehicleMakes = async () => {
@@ -33,7 +33,7 @@ export const getVehicleModels = async (makeId) => {
   }
 };
 
-// Function to estimate CO2 emissions
+// Function to estimate CO2 emissions for vehicles
 export const getCarbonEmissions = async (vehicleModelId, distance, distanceUnit) => {
   try {
     const response = await axios.post('https://www.carboninterface.com/api/v1/estimates', {
@@ -50,6 +50,27 @@ export const getCarbonEmissions = async (vehicleModelId, distance, distanceUnit)
     return response.data;
   } catch (error) {
     console.error('Error estimating carbon emissions:', error.response ? error.response.data : error.message);
+    throw error;
+  }
+};
+
+// Function to estimate CO2 emissions for flights
+export const getFlightCarbonEmissions = async (legs, passengers, distanceUnit) => {
+  try {
+    const response = await axios.post('https://www.carboninterface.com/api/v1/estimates', {
+      type: 'flight',
+      passengers,
+      legs,
+      distance_unit: distanceUnit,
+    }, {
+      headers: {
+        Authorization: `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error estimating flight carbon emissions:', error.response ? error.response.data : error.message);
     throw error;
   }
 };

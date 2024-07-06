@@ -6,8 +6,8 @@ import RegisterForm from './components/register.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import LandingPage from './pages/LandingPage.jsx';
 import Dashboard from './pages/dashboard.jsx';
-import CO2EstimationPage from './pages/co2EstiPage.jsx';
-import CO2CalculationPage from './pages/co2CalPage.jsx';
+import CO2EstimationPage from './pages/CO2Estimationpage.jsx';
+import CO2CalculationPage from './pages/CO2CalculationPage.jsx';
 import Navbar from './components/navbar.jsx';
 import About from './pages/about.jsx';
 import LogoutButton from './components/logout.jsx';
@@ -29,7 +29,7 @@ const App = () => {
           }
         />
         <Route
-          path="/co2EstiPage"
+          path="/CO2Estimationpage"
           element={
             <ProtectedRoute>
               <CO2EstimationPage />
@@ -37,7 +37,7 @@ const App = () => {
           }
         />
         <Route
-          path="/co2CalPage"
+          path="/CO2CalculationPage==="
           element={
             <ProtectedRoute>
               <CO2CalculationPage />

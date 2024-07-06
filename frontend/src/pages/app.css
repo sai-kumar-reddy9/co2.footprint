@@ -265,7 +265,7 @@ h1 {
   letter-spacing: 3px;
   transition: opacity 0.45s;
   opacity: 1; 
-  margin-left: 300px; 
+  margin-left: 50%; 
   background-color: #00c853c0;
   cursor: pointer;
 }

@@ -32,8 +32,8 @@ const Navbar = () => {
         )}
         {isAuthenticated && (
           <>
-            <Link to="/co2CalPage">Calculate CO2</Link>
-            <Link to="/co2EstiPage">Estimate CO2</Link>
+            <Link to="/CO2CalculationPage">Calculate CO2</Link>
+            <Link to="/CO2Estimationpage">Estimate CO2</Link>
             <Link to="/dashboard">Dashboard</Link>
           </>
         )}
