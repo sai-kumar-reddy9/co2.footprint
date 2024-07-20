@@ -1,6 +1,7 @@
 // src/App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './AuthContext';
 import LoginForm from './components/login.jsx'
 import RegisterForm from './components/register.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
@@ -13,6 +14,7 @@ import About from './pages/about.jsx';
 import LogoutButton from './components/logout.jsx';
 const App = () => {
   return (
+    <AuthProvider>
     <div>
       <Navbar />
       <Routes>
@@ -37,7 +39,7 @@ const App = () => {
           }
         />
         <Route
-          path="/CO2CalculationPage==="
+          path="/CO2CalculationPage"
           element={
             <ProtectedRoute>
               <CO2CalculationPage />
@@ -54,6 +56,7 @@ const App = () => {
         />
       </Routes>
     </div>
+    </AuthProvider>
   );
 };
 

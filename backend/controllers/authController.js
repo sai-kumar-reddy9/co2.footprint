@@ -29,7 +29,6 @@ exports.registerUser = async (req, res) => {
 
 exports.loginUser = async (req, res) => {
   const { email, password } = req.body;
-  console.log(email);
   try {
     const user = await User.findOne({ email });
 
@@ -58,6 +57,16 @@ exports.loginUser = async (req, res) => {
     });
   } catch (error) {
     console.error('Login error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+exports.getCurrentUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (error) {
+    console.error('Get current user error:', error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext';
 import '../pages/app.css';
 
 const RegisterForm = () => {
@@ -9,6 +10,7 @@ const RegisterForm = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext); // Import and use AuthContext
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -28,6 +30,7 @@ const RegisterForm = () => {
 
       if (res.ok) {
         console.log(data);
+        login({ username: data.username, email: data.email }); // Update the user state in AuthContext
         alert("User registered successfully");
         navigate('/login');
       } else {
@@ -51,7 +54,7 @@ const RegisterForm = () => {
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Full Name"
+            placeholder=" Username"
             required
           />
           <i className='bx bxs-user'></i>

@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext';
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = !!localStorage.getItem('token'); // Check if user is authenticated
-  console.log('Token in localStorage:', isAuthenticated); // Debug statement
+  const { user } = useContext(AuthContext); // Get user from AuthContext
+  const isAuthenticated = !!user; // Check if user is authenticated
+
+  console.log('User from context:', user); // Debug statement
 
   return isAuthenticated ? (
     children
   ) : (
-    <Navigate to="/login" replace state={{ from: window.location.pathname }} />
+    <Navigate 
+      to="/login" 
+      replace 
+      state={{ from: window.location.pathname }} // Pass the current path for redirection after login
+    />
   );
 };
 

@@ -154,7 +154,6 @@ h1 {
   text-decoration: underline;
 }
 
-
 /* Landing Page Styles */
 
 .landing-page .hero-section {
@@ -181,24 +180,33 @@ h1 {
   margin-bottom: 30px;
 }
 
-.landing-page .features {
-  display: flex;
-  justify-content: space-around;
-}
-
 .landing-page .feature {
-  width: 30%;
+  display: flex;
+  align-items: center;
   padding: 20px;
+  margin-bottom: 30px;
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.landing-page .feature img {
+  width: 50%;
+  height: auto;
+}
+
+.landing-page .feature-content {
+  padding: 20px;
+  width: 50%;
 }
 
 .landing-page .footer {
   padding: 20px;
-  background-color: #282c34;
+  background-color: #21a53b;
   color: white;
   text-align: center;
 }
+
 
 /* CO2 Estimation Page Styles */
 .co2-estimation-page {
@@ -270,4 +278,185 @@ h1 {
   cursor: pointer;
 }
 
+/* CO2CalculationPage Styles */
+
+.co2-calculation-page {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.co2-calculation-page .container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.co2-calculation-page h2 {
+  text-align: center;
+  color: #4caf50;
+}
+
+.co2-calculation-page form {
+  display: flex;
+  flex-direction: column;
+}
+
+.co2-calculation-page form > div {
+  margin-bottom: 15px;
+}
+
+.co2-calculation-page label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.co2-calculation-page input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.co2-calculation-page button {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.co2-calculation-page button:hover {
+  background-color: #45a049;
+}
+
+.co2-calculation-page .result {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.co2-calculation-page .result .kg-result,
+.co2-calculation-page .result .mt-result{
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .co2-calculation-page .container {
+    margin: 20px;
+    padding: 15px;
+  }
+  
+  .co2-calculation-page h2 {
+    font-size: 1.5rem;
+  }
+  
+  .co2-calculation-page button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* About Page Styles */
+
+.about-page {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.about-page h1 {
+  text-align: center;
+  color: #4caf50;
+  margin-bottom: 20px;
+}
+
+.about-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission-section {
+  background-image: url('/sdimg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: rgba(255, 255, 255, 0.829); /* Adjust text color for better contrast */
+}
+
+.about-mission {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.486); 
+  padding: 100px;
+  border-radius: 0px;
+  height: 10%;
+  width: 50%;
+  border-radius: 7px;
+}
+
+.about-mission h2 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.about-mission p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-section h2 {
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+}
+
+.about-section ul li::before {
+  content: '•';
+  color: #4caf50;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.about-section strong {
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .about-page {
+    padding: 10px;
+  }
+
+  .about-section {
+    padding: 15px;
+  }
+
+  .about-page h1 {
+    font-size: 1.5rem;
+  }
+}
 

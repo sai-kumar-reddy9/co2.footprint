@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext'; // Import AuthContext
 import "../pages/app.css";
 
 const LoginForm = () => {
@@ -8,6 +9,7 @@ const LoginForm = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,9 +26,13 @@ const LoginForm = () => {
       });
 
       const data = await res.json();
+      console.log("Login Response: ", data); // Added console.log
       if (res.ok) {
+        login(data.user);//user
+        localStorage.setItem('user', JSON.stringify(data.user)); // 
         console.log('Token received:', data.token); // Debug statement
         localStorage.setItem('token', data.token);
+        login({ email });//authcontext
         navigate('/');
       } else {
         setError(data.message || 'Login failed');
