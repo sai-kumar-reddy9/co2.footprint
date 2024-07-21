@@ -16,6 +16,9 @@ var _default = (0, _vite.defineConfig)({
   plugins: [(0, _pluginReact["default"])()],
   server: {
     port: 3000
+  },
+  build: {
+    outDir: 'dist'
   }
 });
 
