@@ -10,7 +10,7 @@ const RegisterForm = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Import and use AuthContext
+  const { login } = useContext(AuthContext);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -21,16 +21,19 @@ const RegisterForm = () => {
       const res = await fetch("http://co2-footprint.onrender.com/api/auth/register", {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json', // Add this line
         },
         body: JSON.stringify({ username, email, password })
       });
 
       const data = await res.json();
 
+      console.log('Response status:', res.status);
+      console.log('Response data:', data);
+
       if (res.ok) {
-        console.log(data);
-        login({ username: data.username, email: data.email }); // Update the user state in AuthContext
+        login({ username: data.username, email: data.email });
         alert("User registered successfully");
         navigate('/login');
       } else {
@@ -52,9 +55,11 @@ const RegisterForm = () => {
         <div className="input-box">
           <input
             type="text"
+            id="username"
+            name="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder=" Username"
+            placeholder="Username"
             required
           />
           <i className='bx bxs-user'></i>
@@ -62,6 +67,8 @@ const RegisterForm = () => {
         <div className="input-box">
           <input
             type="email"
+            id="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
@@ -72,6 +79,8 @@ const RegisterForm = () => {
         <div className="input-box">
           <input
             type="password"
+            id="password"
+            name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"

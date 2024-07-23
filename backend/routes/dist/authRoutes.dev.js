@@ -1,6 +1,5 @@
 "use strict";
 
-// backend/routes/authRoutes.js
 var express = require('express');
 
 var _require = require('../controllers/authController'),
