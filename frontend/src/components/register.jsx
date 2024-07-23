@@ -22,7 +22,7 @@ const RegisterForm = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json', // Add this line
+          'Accept': 'application/json', 
         },
         body: JSON.stringify({ username, email, password })
       });
