@@ -16,5 +16,7 @@ router.post('/register', registerUser); // Login a user
 
 router.post('/login', loginUser); // Get current user
 
-router.get('/current', protect, getCurrentUser);
+router.get('/current', protect, getCurrentUser); // Preflight request for CORS
+
+router.options('*', cors());
 module.exports = router;
