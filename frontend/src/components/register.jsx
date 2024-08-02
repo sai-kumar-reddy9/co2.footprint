@@ -18,7 +18,7 @@ const RegisterForm = () => {
     setError("");
 
     try {
-      const res = await fetch("http://co2-footprint.onrender.com/api/auth/register", {
+      const res = await fetch("https://co2-footprint.onrender.com/api/auth/register", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

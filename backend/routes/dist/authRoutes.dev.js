@@ -2,6 +2,9 @@
 
 var express = require('express');
 
+var cors = require('cors'); // Add this line
+
+
 var _require = require('../controllers/authController'),
     registerUser = _require.registerUser,
     loginUser = _require.loginUser,
@@ -10,13 +13,14 @@ var _require = require('../controllers/authController'),
 var _require2 = require('../middleware/authMiddleware'),
     protect = _require2.protect;
 
-var router = express.Router(); // Register a new user
+var router = express.Router(); // Preflight request
+
+router.options('*', cors()); // Add this line
+// Register a new user
 
 router.post('/register', registerUser); // Login a user
 
 router.post('/login', loginUser); // Get current user
 
-router.get('/current', protect, getCurrentUser); // Preflight request for CORS
-
-router.options('*', cors());
+router.get('/current', protect, getCurrentUser);
 module.exports = router;
