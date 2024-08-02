@@ -5,7 +5,7 @@ const { protect } = require('../middleware/authMiddleware');
 const router = express.Router();
 
 // Preflight request
-router.options('*', cors()); // Add this line
+router.options('*', cors()); //change
 
 // Register a new user
 router.post('/register', registerUser);
