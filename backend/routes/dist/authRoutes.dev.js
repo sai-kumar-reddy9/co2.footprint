@@ -2,8 +2,7 @@
 
 var express = require('express');
 
-var cors = require('cors'); // Add this line
-
+var cors = require('cors');
 
 var _require = require('../controllers/authController'),
     registerUser = _require.registerUser,
@@ -15,7 +14,7 @@ var _require2 = require('../middleware/authMiddleware'),
 
 var router = express.Router(); // Preflight request
 
-router.options('*', cors()); // Add this line
+router.options('*', cors()); //change
 // Register a new user
 
 router.post('/register', registerUser); // Login a user

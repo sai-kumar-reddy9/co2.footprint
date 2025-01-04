@@ -17,8 +17,8 @@ const LoginForm = () => {
     setError('');
 
     try {
-      //const res = await fetch("http://localhost:5000/api/auth/login",
-      const res = await fetch("https://co2-footprint.onrender.com/api/auth/login", {
+      const res = await fetch("http://localhost:5000/api/auth/login",{
+      //const res = await fetch("https://co2-footprint.onrender.com/api/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -27,13 +27,13 @@ const LoginForm = () => {
       });
 
       const data = await res.json();
-      console.log("Login Response: ", data); // Added console.log
+      console.log("Login Response: ", data); 
       if (res.ok) {
         login(data.user);//user
         localStorage.setItem('user', JSON.stringify(data.user)); // 
-        console.log('Token received:', data.token); // Debug statement
+        console.log('Token received:', data.token);
         localStorage.setItem('token', data.token);
-        login({ email });//authcontext
+        login({ email });
         navigate('/');
       } else {
         setError(data.message || 'Login failed');

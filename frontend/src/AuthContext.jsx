@@ -15,11 +15,15 @@ export const AuthProvider = ({ children }) => {
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
+    setTimeout(() => window.location.reload(), 0);
   };
 
   const logout = () => {
+    console.log('Logging out');
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    setTimeout(() => window.location.reload(), 0);
   };
 
   return (

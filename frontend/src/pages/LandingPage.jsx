@@ -1,4 +1,4 @@
-// src/pages/LandingPage.jsx
+// // src/pages/LandingPage.jsx
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthContext';
 import './app.css';
@@ -43,10 +43,11 @@ const LandingPage = () => {
       </div>
 
       <div className="footer">
-        <p>&copy; 2023 CO2 Footprint Tracker. All rights reserved.</p>
+        <p>&copy; 2024 CO2 Footprint Tracker. All rights reserved.</p>
       </div>
     </div>
   );
 };
 
 export default LandingPage;
+
