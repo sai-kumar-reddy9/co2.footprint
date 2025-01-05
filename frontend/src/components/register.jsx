@@ -36,7 +36,7 @@ const RegisterForm = () => {
       if (res.ok) {
         login({ username: data.username, email: data.email });
         alert("User registered successfully");
-        navigate('/login');
+        navigate('/');
       } else {
         setError(data.message || "Registration failed");
       }
